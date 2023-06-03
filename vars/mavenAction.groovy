@@ -1,6 +1,7 @@
 def call(def input) {
     node {
-        sh "mvn $input.goal ${input.params ? input.params : ' '}"
+        dir('mavenAction([goal: 'clean test'])'){
+        sh "mvn $input.goal ${input.params ? input.params : ' '}"}
         
     }
 }
