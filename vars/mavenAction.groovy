@@ -1,6 +1,6 @@
 def call(def input) {
     node {
-        dir('mavenAction([goal: 'clean test'])'){
+        dir('/var/jenkins_home/workspace/vscode-pipeline'){
         sh "mvn $input.goal ${input.params ? input.params : ' '}"}
         
     }
