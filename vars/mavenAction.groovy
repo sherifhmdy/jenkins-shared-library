@@ -1,6 +1,6 @@
 def call(def input) {
-    // node {
+    node {
         sh "mvn $input.goal ${input.params ? input.params : ' '}"
         
-    // }
+    }
 }
