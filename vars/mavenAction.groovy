@@ -1,7 +1,7 @@
 def call(def input) {
     node {
         sh '''
-            cd $WORKSPACE
+            cd $input.directory
             mvn $input.goal ${input.params ? input.params : ' '}
         '''
     }
