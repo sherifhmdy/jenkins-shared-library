@@ -4,7 +4,13 @@ def call() {
         //     sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=helloworld -Dsonar.projectName=helloworld'
         // }
     // }
-        stage 'SayeHello' {
-            echo "hello"
+        pipeline {
+            stages {
+                stage('hi') {
+                    steps {
+                        echo "hi"
+                    }
+                }
+            }
         }
 }
