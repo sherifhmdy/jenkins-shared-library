@@ -1,11 +1,7 @@
 def call() {
-    // node {
-        // withSonarQubeEnv('sonarqube') {
-        //     sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=helloworld -Dsonar.projectName=helloworld'
-        // }
-    // }
-        node {
-            stage 'hi'
-            echo "hello"
+    node {
+        withSonarQubeEnv('sonarqube') {
+            sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=helloworld -Dsonar.projectName=helloworld'
         }
+    }
 }
